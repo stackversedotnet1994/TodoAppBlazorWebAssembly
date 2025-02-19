@@ -1,0 +1,16 @@
+﻿
+<EditForm class="row g-2" Model="@_newItem" OnValidSubmit="@ItemAdded">
+    <FluentValidationValidator />
+
+    <div class="col-auto">
+        <label for="Item" class="visually-hidden">Text</label>
+        <InputText @bind-Value="_newItem.Text" class="form-control" id="Item" />
+        <ValidationMessage For="@(() => _newItem.Text)" />
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+    <div class="col-auto">
+        <button type="reset" class="btn btn-secondary">Clear</button>
+    </div>
+</EditForm>
